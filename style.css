@@ -60,6 +60,7 @@ html, body{
     margin: 0;
     background-color: #f6f6f6;
     height: 100%;
+    overflow: visible;
 }
 
 #loginDiv{
@@ -203,7 +204,7 @@ html, body{
 
 #container{
     padding: 0 20rem;
-    height: 90%;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
 }
@@ -243,12 +244,60 @@ html, body{
     width: 70%;
 }
 
-#recentSet{
+#jumpIn{
     background-color: #fff;
     padding: 1rem 3rem;
     border-radius: 5px;
-    width: 100%;
     -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
     box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
+    line-height: 2;
+    margin-bottom: 1rem;
 }
+
+#lastSetName{
+    font-size: 24pt;
+}
+
+#studybtn{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem 2rem;
+    color: #1b1b1b;
+    border: 1px solid #1b1b1b;
+    background-size: 200% 200%;
+    background-image: linear-gradient(to top, #1b1b1b 50%, transparent 50%);
+    transition: .15s ease all;
+    font-size: 18pt;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+    width: 20rem;
+}
+
+#studybtn:hover{
+    color: #fff;
+    background-image: linear-gradient(to top, #1b1b1b 51%, transparent 50%);
+    background-position: 0 100%;
+    transition: .15s ease all;
+}
+
+#setCards{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-column-gap: 4rem;
+    grid-row-gap: 3rem;
+}
+
+.setCard{
+    margin-top: 1rem;
+    padding: 0 3rem;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
+    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
+    line-height: 2;
+}
+
