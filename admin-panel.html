@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="icons.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User panel</title>
+        <script type="text/javascript">
+            var totalCount = 9;
+            function ChangeIt(){
+                var num = Math.ceil(Math.random() * totalCount);
+                document.querySelector("#navbar").style.backgroundImage = 'url("bgimages/' + num + '.svg")';
+                document.querySelector("#navbar").style.backgroundRepeat = 'repeat';
+                document.querySelector("#navbar").style.backgroundPosition = '100%';
+            }
+        </script>
+    </head>
+    <body>
+        <nav id="navbar">
+            <a onclick="" class="navbtn">Create <i class="icofont-plus-square"></i></a><!--
+            --><a onclick="" class="navbtn">$username <i class="icofont-ui-user"></i></a>
+        </nav>
+        <section id="container">
+            <aside id="sidebar">
+                <div class="menubtn"><span><i class="icofont-home icon"></i>Home</span></div>
+                <div class="menubtn"><span><i class="icofont-settings icon"></i>Settings</span></div>
+                <div class="menubtn"><span><i class="icofont-ui-user icon"></i>Manage Accounts</span></div>
+                <div class="menubtn"><span><i id="icon-sign-out" class="icofont-sign-out icon"></i>Log out</span></div>
+            </aside>
+            <div id="main">
+                <h2 id="adminRecent"><i class="icofont-clock-time"></i> Recently created sets:</h2>
+                <div id="setCards">
+                    <div class="setCard">
+                        <h3>$setname</h3>
+                        <p>$termnumber terms</p>
+                        <h4>$setcreator</h4>
+                    </div>
+                    <div class="setCard">
+                        <h3>$setname</h3>
+                        <p>$termnumber terms</p>
+                        <h4>$setcreator</h4>
+                    </div>
+                    <div class="setCard">
+                        <h3>$setname</h3>
+                        <p>$termnumber terms</p>
+                        <h4>$setcreator</h4>
+                    </div>
+                    <div class="setCard">
+                        <h3>$setname</h3>
+                        <p>$termnumber terms</p>
+                        <h4>$setcreator</h4>
+                    </div>
+                </div>
+                <h2><i class="icofont-clock-time"></i> Recently created accounts:</h2>
+                <div id="accCards">
+                    <div class="accCard">
+                        <h3>$accname</h3>
+                        <p>$creationDate</p>
+                        <h4>$permissionLevel</h4>
+                    </div>
+                    <div class="accCard">
+                        <h3>$accname</h3>
+                        <p>$creationDate</p>
+                        <h4>$permissionLevel</h4>
+                    </div>
+                    <div class="accCard">
+                        <h3>$accname</h3>
+                        <p>$creationDate</p>
+                        <h4>$permissionLevel</h4>
+                    </div>
+                    <div class="accCard">
+                        <h3>$accname</h3>
+                        <p>$creationDate</p>
+                        <h4>$permissionLevel</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            ChangeIt();
+        </script>
+    </body>
+</html>
