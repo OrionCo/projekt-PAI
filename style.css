@@ -1,8 +1,8 @@
 /* login page */
 
 @font-face {
-    font-family: 'loves';
-    src: url("/fonts/loves.ttf") format("truetype");
+    font-family: 'raleway';
+    src: url("/fonts/raleway-regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -55,6 +55,13 @@
     }
 }
 
+html, body{
+    font-family: 'raleway';
+    margin: 0;
+    background-color: #f6f6f6;
+    height: 100%;
+}
+
 #loginDiv{
     padding: 50px 35px 60px 35px;
     text-align: center;
@@ -65,7 +72,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 2;
-    font-family: 'loves';
 }
 
 #loginDiv label{
@@ -82,7 +88,6 @@
     width: 100%;
     border: none;
     padding: 10px;
-    font-family: 'roboto-slab';
     background-color: transparent;
     position: relative;
 }
@@ -130,7 +135,6 @@
     border: 1px solid #1b1b1b;
     width: 40%;
     margin: auto;
-    font-family: 'loves';
     background-size: 200% 200%;
     background-image: linear-gradient(to top, transparent 50%, #1b1b1b 50%);
     transition: .15s ease all;
@@ -159,7 +163,6 @@
     text-align: center;
     display: block;
     margin: 10px auto 0 auto;
-    
     width: 35%;
     color: #1b1b1b;
     border: 1px solid #1b1b1b;
@@ -178,3 +181,74 @@
 #register:active { color: #fff; }
 
 /* user panel */
+
+#navbar{
+    padding: 40px 25rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16pt;
+}
+
+.navbtn{
+    cursor: pointer;
+    color: #fff;
+    padding: 15px;
+    transition: .2s ease all;
+}
+
+.navbtn:hover{
+    color: #1b1b1b;
+    background-color: #fff;
+}
+
+#container{
+    padding: 0 20rem;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#sidebar{
+    background-color: #fff;
+    width: 17rem;
+    height: 100%;
+    -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.37);
+    -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.37);
+    box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.37);
+}
+
+.icon{
+    margin-right: 20px;
+}
+
+#icon-sign-out{
+    transform: rotate(180deg);
+    display: inline-block;
+}
+
+.menubtn{
+    cursor: pointer;
+    transition: .2s ease all;
+    padding: 2rem 2rem;
+    font-size: 14pt;
+}
+
+.menubtn:hover{
+    background-color: #1b1b1b;
+    color: #fff;
+}
+
+#main{
+    padding: 2rem 0 4rem 4rem;
+    width: 70%;
+}
+
+#recentSet{
+    background-color: #fff;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
+    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
+}

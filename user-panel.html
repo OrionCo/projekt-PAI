@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="icons.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User panel</title>
@@ -9,13 +10,33 @@
             var totalCount = 9;
             function ChangeIt(){
                 var num = Math.ceil(Math.random() * totalCount);
-                document.body.background = 'bgimages/' + num + '.svg';
-                document.body.style.backgroundRepeat = 'repeat';
+                document.querySelector("#navbar").style.backgroundImage = 'url("bgimages/' + num + '.svg")';
+                document.querySelector("#navbar").style.backgroundRepeat = 'repeat';
+                document.querySelector("#navbar").style.backgroundPosition = '100%';
             }
         </script>
     </head>
     <body>
-
-        
+        <nav id="navbar">
+            <a onclick="" class="navbtn">Create <i class="icofont-plus-square"></i></a><!--
+            --><a onclick="" class="navbtn">$username <i class="icofont-ui-user"></i></a>
+        </nav>
+        <section id="container">
+            <aside id="sidebar">
+                <div class="menubtn"><span><i class="icofont-home icon"></i>Home</span></div>
+                <div class="menubtn"><span><i class="icofont-notebook icon"></i>Sets</span></div>
+                <div class="menubtn"><span><i class="icofont-settings icon"></i>Settings</span></div>
+                <div class="menubtn"><span><i id="icon-sign-out" class="icofont-sign-out icon"></i>Log out</span></div>
+            </aside>
+            <div id="main">
+                <div id="recentSet">
+                    <h1><i class="icofont-flash"></i>Jump back in:</h1>
+                    
+                </div>
+            </div>
+        </section>
+        <script>
+            ChangeIt();
+        </script>
     </body>
 </html>
