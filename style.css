@@ -189,16 +189,8 @@ html, body{
     font-size: 16pt;
 }
 
-.navbtn{
-    cursor: pointer;
-    color: #fff;
-    padding: 15px;
-    transition: .2s ease all;
-}
-
-.navbtn:hover{
-    color: #1b1b1b;
-    background-color: #fff;
+#mobilenav{
+    display: none;
 }
 
 #container{
@@ -213,27 +205,6 @@ html, body{
     -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.37);
     -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.37);
     box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.37);
-}
-
-.icon{
-    margin-right: 20px;
-}
-
-#icon-sign-out{
-    transform: rotate(180deg);
-    display: inline-block;
-}
-
-.menubtn{
-    cursor: pointer;
-    transition: .2s ease all;
-    padding: 2rem 2rem;
-    font-size: 14pt;
-}
-
-.menubtn:hover{
-    background-color: #1b1b1b;
-    color: #fff;
 }
 
 #main{
@@ -297,6 +268,121 @@ html, body{
     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
     box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
     line-height: 2;
+}
+
+.menubtn{
+    cursor: pointer;
+    transition: .2s ease all;
+    padding: 2rem 2rem;
+    font-size: 14pt;
+}
+
+.menubtn:hover{
+    background-color: #1b1b1b;
+    color: #fff;
+}
+
+@media screen and (max-width: 1200px){
+    #navbar{
+        display: none;
+    }
+
+    #mobilenav{
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 6rem;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 16pt;
+        top: 0;
+    }
+
+    #mobileMenu{
+        position: fixed;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: #f6f6f6;
+    }
+
+    .menubtn{
+        padding: 2rem 6rem;
+    }
+
+    #sidebar{
+        display: none;
+    }
+
+    #container{
+        padding: 0 4rem;
+        display: block;
+    }
+
+    #main{
+        width: auto;
+        padding: 2rem 0;
+        margin: 0 auto;
+    }
+
+    #studybtn{
+        width: auto;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+    #mobilenav{
+        font-size: 12pt;
+        padding: 1rem 2rem;
+    }
+
+    .menubtn{
+        font-size: 14pt;
+        padding: 2rem 3rem;
+    }
+
+    #container{
+        padding: 0 2rem;
+    }
+
+    #setCards, #accCards{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-column-gap: 4rem;
+        grid-row-gap: 2rem;
+        margin-bottom: 0;
+    }
+
+    #lastSetName{
+        font-size: 16pt;
+    }
+
+    #studybtn{
+        font-size: 14pt;
+    }
+}
+
+.navbtn{
+    cursor: pointer;
+    color: #fff;
+    padding: 15px;
+    transition: .2s ease all;
+}
+
+.navbtn:hover{
+    color: #1b1b1b;
+    background-color: #fff;
+}
+
+.icon{
+    margin-right: 20px;
+}
+
+#icon-sign-out{
+    transform: rotate(180deg);
+    display: inline-block;
 }
 
 /* admin panel */

@@ -13,6 +13,9 @@
                 document.querySelector("#navbar").style.backgroundImage = 'url("bgimages/' + num + '.svg")';
                 document.querySelector("#navbar").style.backgroundRepeat = 'repeat';
                 document.querySelector("#navbar").style.backgroundPosition = '100%';
+                document.querySelector("#mobilenav").style.backgroundImage = 'url("bgimages/' + num + '.svg")';
+                document.querySelector("#mobilenav").style.backgroundRepeat = 'repeat';
+                document.querySelector("#mobilenav").style.backgroundPosition = '100%';
             }
         </script>
     </head>
@@ -21,6 +24,16 @@
             <a onclick="" class="navbtn">Create <i class="icofont-plus-square"></i></a><!--
             --><a onclick="" class="navbtn">$username <i class="icofont-ui-user"></i></a>
         </nav>
+        <nav id="mobilenav">
+            <a onclick="" class="navbtn">$username <i class="icofont-ui-user"></i></a>
+            <a onclick="mobileNav()" class="navbtn"><i class="icofont-settings"></i></a>
+        </nav>
+        <section id="mobileMenu">
+            <div class="menubtn"><span><i class="icofont-home icon"></i>Home</span></div>
+            <div class="menubtn"><span><i class="icofont-notebook icon"></i>Sets</span></div>
+            <div class="menubtn"><span><i class="icofont-settings icon"></i>Settings</span></div>
+            <div class="menubtn"><span><i id="icon-sign-out" class="icofont-sign-out icon"></i>Log out</span></div>
+        </section>
         <section id="container">
             <aside id="sidebar">
                 <div class="menubtn"><span><i class="icofont-home icon"></i>Home</span></div>
@@ -28,6 +41,7 @@
                 <div class="menubtn"><span><i class="icofont-settings icon"></i>Settings</span></div>
                 <div class="menubtn"><span><i id="icon-sign-out" class="icofont-sign-out icon"></i>Log out</span></div>
             </aside>
+            
             <div id="main">
                 <div id="jumpIn">
                     <h1><i class="icofont-flash"></i>Jump back in:</h1>
@@ -61,6 +75,20 @@
         </section>
         <script>
             ChangeIt();
+            var mobilenav = document.getElementById("mobilenav");
+            if(window.innerWidth <= 1200){
+                document.querySelector("#container").style.marginTop = mobilenav.offsetHeight + "px";
+            }
+            const menu = document.querySelector("#mobileMenu");
+            menu.style.display = "none";
+            function mobileNav(){
+                if(menu.style.display === "none"){
+                    menu.style.display = "block";
+                    menu.style.top = mobilenav.offsetHeight + "px";
+                } else {
+                    menu.style.display = "none";
+                }
+            }
         </script>
     </body>
 </html>
