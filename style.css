@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: 'raleway';
-    src: url("/fonts/raleway-regular.ttf") format("truetype");
+    src: url("fonts/raleway-regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: 'roboto-slab';
-    src: url('/fonts/robotoslab-extralight.ttf') format('truetype');
+    src: url('fonts/robotoslab-extralight.ttf') format('truetype');
 }
 
 @media screen and (max-width: 768px){
