@@ -272,9 +272,12 @@ html, body{
 
 .menubtn{
     cursor: pointer;
+    display: block;
     transition: .2s ease all;
     padding: 2rem 2rem;
     font-size: 14pt;
+    color: inherit;
+    text-decoration: none;
 }
 
 .menubtn:hover{
