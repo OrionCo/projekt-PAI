@@ -5,19 +5,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Landing page</title>
-        <script type="text/javascript">
-            var totalCount = 9;
-            function ChangeIt(){
-                var num = Math.ceil(Math.random() * totalCount);
-                document.body.background = 'bgimages/' + num + '.svg';
-                document.body.style.backgroundRepeat = 'repeat';
-            }
-        </script>
         <style>
             html, body{
                 height: 100%;
             }
         </style>
+        <script type="text/javascript" src="bcgscript.js"></script>
     </head>
     <body>
         <form id="loginDiv" method="post" action="">
@@ -46,8 +39,8 @@
             <span id="noAcc">Don't have an account?</span>
             <a href="" id="register">Register</a>
         </form>
+        <script type="text/javascript">
+            landingChangeIt();
+        </script>
     </body>
-    <script type="text/javascript">
-        ChangeIt();
-    </script>
 </html>
