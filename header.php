@@ -31,7 +31,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo $panelName ?></title>
-        <script type="text/javascript" src="bcgscript.js"></script>
+        <script type="text/javascript" src="bgscript.js"></script>
     </head>
     <body>
         <nav id="navbar">

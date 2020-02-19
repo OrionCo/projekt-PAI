@@ -14,7 +14,7 @@
                 height: 100%;
             }
         </style>
-        <script type="text/javascript" src="bcgscript.js"></script>
+        <script type="text/javascript" src="bgscript.js"></script>
     </head>
     <body>
         <form id="loginDiv" method="post" action="registerscript.php">
