@@ -12,6 +12,7 @@
     }
 
     if(!isset($_POST['username'], $_POST['password'])){
+        $_SESSION['error'] = "Please fill in every field.";
         header('location: landing-page.php');
     }
 
@@ -37,10 +38,12 @@
                     header('Location: user-panel.php');
                 }
             } else {
-                echo 'incorrect password';
+                $_SESSION['error'] = "Username doesn't exist or the provided password is incorrect.";
+                header("location: landing-page.php");
             }
         } else {
-            echo 'incorrect username';
+            $_SESSION['error'] = "Username doesn't exist or the provided password is incorrect.";
+            header("location: landing-page.php");
         }
 
         $stmt->close();

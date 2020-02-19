@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
     <head>
@@ -14,6 +18,13 @@
     </head>
     <body>
         <form id="loginDiv" method="post" action="authenticate.php">
+            <div class="error">
+                <?php
+                    if(isset($_SESSION['error'])){
+                        echo $_SESSION['error'];
+                    }
+                ?>
+            </div>
             <div class='labels'>
                 <input class="logincreds" type="text" name="username" id="username" placeholder="Username:" required>
                 <span class="bar"></span>
@@ -43,3 +54,7 @@
         </script>
     </body>
 </html>
+
+<?php 
+    unset($_SESSION['error']);
+?>

@@ -1,10 +1,14 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Landing page</title>
+        <title>Register</title>
         <style>
             html, body{
                 height: 100%;
@@ -14,6 +18,13 @@
     </head>
     <body>
         <form id="loginDiv" method="post" action="registerscript.php">
+            <div class="error">
+            <?php
+                if(isset($_SESSION['error'])){
+                    echo $_SESSION['error'];
+                }
+            ?>
+            </div>
             <div class='labels'>
                 <input class="logincreds" type="text" name="email" id="email" placeholder="E-mail:" required>
                 <span class="bar"></span>
@@ -44,3 +55,7 @@
         </script>
     </body>
 </html>
+
+<?php 
+    unset($_SESSION['error']);
+?>

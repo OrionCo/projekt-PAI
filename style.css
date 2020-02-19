@@ -90,6 +90,7 @@ html, body{
     padding: 10px;
     background-color: transparent;
     position: relative;
+    font-family: inherit;
 }
 
 .logincreds:focus{ outline: none; }
@@ -131,6 +132,8 @@ html, body{
 }
 
 #loginbtn{
+    -webkit-appearance: none;
+    font-family: inherit;
     color: #fff;
     border: 1px solid #1b1b1b;
     width: 40%;
