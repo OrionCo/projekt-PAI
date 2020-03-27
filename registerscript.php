@@ -1,12 +1,6 @@
 <?php
-
     session_start();
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "";
-    $dbname = "projekt";
-
-    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+    require("connect.php");
 
     if(mysqli_connect_errno()){
         die('Failed to connect to database: ' . mysqli_connect_error());

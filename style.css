@@ -183,6 +183,10 @@ html, body{
 
 #register:active { color: #fff; }
 
+.error{
+    color: rgb(255, 62, 62);
+}
+
 /* user panel */
 
 #navbar{
