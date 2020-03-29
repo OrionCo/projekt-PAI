@@ -63,7 +63,7 @@ html, body{
 }
 
 #loginDiv{
-    padding: 50px 35px 60px 35px;
+    padding: 35px 15px 60px 15px;
     text-align: center;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.85);
@@ -136,7 +136,8 @@ html, body{
     font-family: inherit;
     color: #fff;
     border: 1px solid #1b1b1b;
-    width: 40%;
+    min-width: 40%;
+    width: unset;
     margin: auto;
     background-size: 200% 200%;
     background-image: linear-gradient(to top, transparent 50%, #1b1b1b 50%);

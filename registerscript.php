@@ -5,9 +5,17 @@
     if(mysqli_connect_errno()){
         die('Failed to connect to database: ' . mysqli_connect_error());
     }
-
     if(!isset($_POST['username'], $_POST['password'], $_POST['email'])){
         $_SESSION['error'] = "Please fill in every field.";
+        header('location: register.php');
+    }
+
+    $email = $_POST['email'];
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+    
+    if(!$email){
+        $_SESSION['error'] = "The e-mail you have provided is not valid.";
         header('location: register.php');
     }
 
