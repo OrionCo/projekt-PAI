@@ -1,31 +1,14 @@
-<?php
-    session_start();
-?>
+<?php require("credentialheader.php") ?>
 
-<!DOCTYPE html>
-<html lang="pl">
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Register</title>
-        <style>
-            html, body{
-                height: 100%;
-            }
-        </style>
-        <script type="text/javascript" src="bgscript.js"></script>
-    </head>
-    <body>
         <form id="loginDiv" method="post" action="registerscript.php">
-            <div class="error">
-            <?php
-                if(isset($_SESSION['error'])){
-                    echo $_SESSION['error'];
-                }
-            ?>
-            </div>
             <div class='labels'>
+                <div class="error">
+                    <?php
+                        if(isset($_SESSION['error'])){
+                            echo $_SESSION['error'];
+                        }
+                    ?>
+                </div>
                 <input class="logincreds" type="text" name="email" id="email" placeholder="E-mail:" required>
                 <span class="bar"></span>
                 <label for="email">E-mail:</label>
@@ -50,12 +33,5 @@
             <span id="noAcc">Already have an account?</span>
             <a href="landing-page.php" id="register">Log in</a>
         </form>
-        <script type="text/javascript">
-            landingChangeIt();
-        </script>
-    </body>
-</html>
 
-<?php 
-    unset($_SESSION['error']);
-?>
+<?php require("credentialfooter.php") ?>

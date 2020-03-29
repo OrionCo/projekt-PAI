@@ -1,36 +1,17 @@
-<?php
-    session_start();
-?>
-
-<!DOCTYPE html>
-<html lang="pl">
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Landing page</title>
-        <style>
-            html, body{
-                height: 100%;
-            }
-        </style>
-        <script type="text/javascript" src="bgscript.js"></script>
-    </head>
-    <body>
+<?php require("credentialheader.php") ?>
         <form id="loginDiv" method="post" action="authenticate.php">
-            <div class="error">
-                <?php
-                    if(isset($_SESSION['error'])){
-                        echo $_SESSION['error'];
-                    }
-                ?>
-            </div>
             <div class='labels'>
+                <div class="error">
+                    <?php
+                        if(isset($_SESSION['error'])){
+                            echo $_SESSION['error'];
+                        }
+                    ?>
+                </div>
                 <input class="logincreds" type="text" name="username" id="username" placeholder="Username:" required>
                 <span class="bar"></span>
                 <label for="username">username:</label>
             </div>
-            <br>
             <div class='labels'>
                 <input class="logincreds" type="password" name="password" id="password" placeholder="Password:" required>
                 <span class="bar"></span>
@@ -49,12 +30,4 @@
             <span id="noAcc">Don't have an account?</span>
             <a href="register.php" id="register">Register</a>
         </form>
-        <script type="text/javascript">
-            landingChangeIt();
-        </script>
-    </body>
-</html>
-
-<?php
-    unset($_SESSION['error']);
-?>
+<?php require("credentialfooter.php") ?>

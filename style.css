@@ -85,7 +85,7 @@ html, body{
 }
 
 .logincreds{
-    width: 100%;
+    width: calc(100% - 20px);
     border: none;
     padding: 10px;
     background-color: transparent;
@@ -184,7 +184,9 @@ html, body{
 #register:active { color: #fff; }
 
 .error{
-    color: rgb(255, 62, 62);
+    color: rgb(255, 87, 87);
+    font-size: 9pt;
+    margin: 0;
 }
 
 /* user panel */
