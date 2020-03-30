@@ -106,7 +106,6 @@ require("credentialheader.php");
     <a href="landing-page.php" id="register">Log in</a>
 </form>
 
-
 <?php
 require("credentialfooter.php");
 }

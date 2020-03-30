@@ -41,7 +41,25 @@
                         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                         $stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
                         $stmt->execute();
-                        header('Location: landing-page.php');
+
+                        if($stmt = $con->prepare('SELECT `User_id` FROM users WHERE `E-mail` = ?')){
+                            $stmt->bind_param('s', $_POST['email']);
+                            $stmt->execute();
+                            $stmt->store_result();
+
+                            if($stmt->num_rows() > 0){
+                                $stmt->bind_result($id);
+                                $stmt->fetch();
+                                
+                                if($stmt = $con->prepare("INSERT INTO `user_level` (`User_id`, `Is_admin`) VALUES (?, DEFAULT)")){
+                                    $stmt->bind_param('s', $id);
+                                    $stmt->execute();
+                                    $_SESSION['error'] = "User account has been registered.";
+
+                                    header('Location: landing-page.php');
+                                }
+                            }
+                        }
                     }
                 }
             }

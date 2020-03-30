@@ -1,4 +1,6 @@
-<script src="uiscript.js"></script>
+            </div>
+        </section>
+        <script src="uiscript.js"></script>
         <script>
             panelChangeIt();
         </script>

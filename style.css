@@ -215,6 +215,7 @@ html, body{
     -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.37);
     -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.37);
     box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.37);
+    min-height: calc(100vh - 135px);
 }
 
 #main{
@@ -230,7 +231,7 @@ html, body{
     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
     box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
     line-height: 2;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 #lastSetName{
@@ -271,13 +272,37 @@ html, body{
 }
 
 .setCard, .accCard{
+    background-color: #fff;
     margin-top: 1rem;
-    padding: 0 3rem;
+    padding: 1rem 4rem;
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
     box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
     line-height: 2;
+}
+
+.studySet{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: .5rem 1rem;
+    color: #1b1b1b;
+    border: 1px solid #1b1b1b;
+    background-size: 200% 200%;
+    background-image: linear-gradient(to top, #1b1b1b 50%, transparent 50%);
+    transition: .15s ease all;
+    font-size: inherit;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+    width: 20%;
+}
+
+.studySet:hover{
+    color: #fff;
+    background-image: linear-gradient(to top, #1b1b1b 51%, transparent 50%);
+    background-position: 0 100%;
+    transition: .15s ease all;
 }
 
 .menubtn{
@@ -402,4 +427,117 @@ html, body{
 
 #adminRecent{
     margin-top: 0;
+}
+
+.list{
+    border-radius: 10px;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 2rem;
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
+    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.37);
+}
+
+.listItem{
+    width: calc(100% - 8rem);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.listItem:hover{
+    background: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03));
+}
+
+.listItem:nth-of-type(even){
+    background-color: #eee;
+}
+
+.listItem:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.listItem:last-child, .itemInfo:last-of-type{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.itemName{
+    font-size: 12pt;
+    font-weight: bolder;
+    margin-right: 1rem;
+}
+
+.itemOpen{
+    cursor: pointer;
+    font-size: 12pt;
+    font-weight: bolder;
+}
+
+.itemInfo{
+    display: none;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 1rem 4rem;
+    width: calc(100% - 8rem);
+    color: #2e2e2e;
+}
+
+.itemInfo:nth-of-type(even){
+    background-color: #eee;
+}
+
+.infoName{
+    margin-right: 4rem;
+}
+
+.active{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.active span{
+    display: block;
+}
+
+.active span:not(:last-child){
+    margin-bottom: 1rem;
+}
+
+.editInfo{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: .5rem 1rem;
+    color: #1b1b1b;
+    border: 1px solid #1b1b1b;
+    background-size: 200% 200%;
+    background-image: linear-gradient(to top, #1b1b1b 50%, transparent 50%);
+    transition: .15s ease all;
+    font-size: inherit;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+    background-color: inherit;
+}
+
+.editInfo:hover{
+    color: #fff;
+    background-image: linear-gradient(to top, #1b1b1b 51%, transparent 50%);
+    background-position: 0 100%;
+    transition: .15s ease all;
+}
+
+.editForm{
+    display: none;
+}
+
+.editForm input{
+    display: block;
+}
+
+.editForm input:not(:last-child){
+    margin-bottom: 1rem;
+    font-family: inherit;
 }
