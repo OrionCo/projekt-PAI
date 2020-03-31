@@ -24,7 +24,7 @@
                         if(!empty($_POST['confirmPass']) && (isset($_POST['confirmPass']))){
                             if($_POST['newPass'] == $_POST['confirmPass']){
                                 if($stmt = $con->prepare("UPDATE `users` SET `Hashed_pass` = ? WHERE `User_id` = ?")){
-                                    $newPass = password_hash($_POST['newPass'], PASSWORD_DEFAULT);
+                                    $newPass = password_hash($_POST['newPass'], PASSWORD_ARGON2ID);
                                     $stmt->bind_param('si', $newPass, $_SESSION['id']);
                                     $stmt->execute();
                                     $stmt->close();
