@@ -30,3 +30,10 @@ for(var i = 0; i < editListItem.length; i++){
         e.target.parentElement.nextElementSibling.nextElementSibling.style.display = "block";
     });
 }
+
+var addbtn = document.querySelector("#addBtn");
+var addForm = document.querySelector(".addNewTerm")
+addbtn.addEventListener("click", function(){
+    this.style.display = "none";
+    addForm.style.display = "flex";
+});

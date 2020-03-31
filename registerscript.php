@@ -38,7 +38,7 @@
                     header("Location: register.php");
                 } else {
                     if ($stmt = $con->prepare('INSERT INTO `users` (Username, Hashed_pass, `E-mail`) VALUES (?, ?, ?)')){
-                        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                        $password = password_hash($_POST['password'], PASSWORD_ARGON2I);
                         $stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
                         $stmt->execute();
 

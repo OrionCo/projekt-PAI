@@ -644,3 +644,23 @@ html, body{
 .setInfoContent{
     font-weight: bolder;
 }
+
+.addNewBtn{
+    width: auto;
+    margin: 0;
+    background-color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.addNewTerm{
+    width: 100%;
+    display: none;
+    justify-content: space-evenly;
+}
+
+.addNew input{
+    font-family: inherit;
+    font-size: 12pt;
+    padding-left: 1rem;
+}

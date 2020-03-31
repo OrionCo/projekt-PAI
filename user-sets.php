@@ -5,9 +5,10 @@
         $stmt->execute();
         $stmt->store_result();
 
+        echo "<div class='list'>";
         if($stmt->num_rows() > 0){
             $stmt->bind_result($setAuthor, $setName, $creationDate, $setId);
-            echo "<div class='list'>";
+            
             while($stmt->fetch()){
                 echo <<< list
                 <div class="listItem setList">
@@ -21,9 +22,22 @@
                 </div>
                 list;
             }
-            echo "</div>";
+            $stmt->close();
         }
-        $stmt->close();
+        echo <<< addnew
+            <div class="listItem addNew">
+                <input type="button" id="addBtn" class="studySet addNewBtn" value="Add new set" />
+                <form class="addNewTerm" action="addSet.php" method="post">
+                    <input type="text" name="setName" placeholder="Set name.." required />
+                    <input type="submit" class="studySet addNewBtn" value="Submit" />
+                </form>
+        addnew;
+        echo "<div class='error'>";
+        if(isset($_SESSION['error'])){
+            echo $_SESSION['error'];
+        }
+        echo "</div>";
+        echo "</div></div>";
     }
 
     require("footer.php");

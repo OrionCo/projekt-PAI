@@ -10,7 +10,7 @@
             if(isset($lastSet)){
                 echo <<< jumpin
                 <div id="jumpIn">
-                    <h1><i class="icofont-flash"></i>Jump back in:</h1>
+                    <h1><i class="icofont-flash"></i>Latest word set:</h1>
                     <h1 id="lastSetName">$lastSet</h1>
                     <form action="set.php" method="post">
                         <input type="hidden" name="setId" value="$setId" />
@@ -22,12 +22,12 @@
                 ?>
             <div id="jumpIn">
                 <h1><i class="icofont-flash"></i>Create a new set!</h1>
-                <a href="" id="studybtn">Create</a>
+                <a href="user-sets.php" id="studybtn">Create</a>
             </div>
             <?php
             }
             ?>
-            <h2><i class="icofont-clock-time"></i> Recent sets created by you:</h2>
+            <h2><i class="icofont-clock-time"></i> Recently created sets:</h2>
             <div id="setCards">
             <?php
             while($stmt->fetch()){

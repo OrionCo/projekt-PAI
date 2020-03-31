@@ -57,8 +57,7 @@
     </head>
     <body>
         <nav id="navbar">
-            <a onclick="" class="navbtn">Create <i class="icofont-plus-square"></i></a><!--
-            --><a onclick="" class="navbtn"><?php echo $_SESSION['name'] ?> <i class="icofont-ui-user"></i></a>
+            <a onclick="" class="navbtn"><?php echo $_SESSION['name'] ?> <i class="icofont-ui-user"></i></a>
         </nav>
         <nav id="mobilenav">
             <a onclick="" class="navbtn"><?php echo $_SESSION['name'] ?> <i class="icofont-ui-user"></i></a>

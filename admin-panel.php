@@ -53,13 +53,6 @@
                     }
                 }
                 echo "</div>";
-            } else {
-                ?>
-                <div id="jumpIn">
-                    <h1><i class="icofont-flash"></i>Create an account</h1>
-                    <a href="" id="studybtn">Create account</a>
-                </div>
-                <?php
             }
         }
         ?>
