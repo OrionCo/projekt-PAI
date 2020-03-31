@@ -1,11 +1,13 @@
 <?php
     require("header.php");
+
     if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['curPass'])){
         $email = $_POST['email'];
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $email = filter_var($email, FILTER_VALIDATE_EMAIL);
 
         if(!$email){
+            unset($_SESSION['error']);
             $_SESSION['error'] = "The e-mail you have provided is not valid.";
             header('location: settings.php');
         } else {
@@ -20,35 +22,48 @@
                 $stmt->close();
 
                 if(password_verify($curPass, $hash)){
-                    if(!empty($_POST['newPass']) && (isset($_POST['newPass']))){
-                        if(!empty($_POST['confirmPass']) && (isset($_POST['confirmPass']))){
+                    if(isset($_POST['newPass']) && ($_POST['newPass'] !== "")){
+                        if(isset($_POST['confirmPass']) && ($_POST['confirmPass'] !== "")){
                             if($_POST['newPass'] == $_POST['confirmPass']){
                                 if($stmt = $con->prepare("UPDATE `users` SET `Hashed_pass` = ? WHERE `User_id` = ?")){
                                     $newPass = password_hash($_POST['newPass'], PASSWORD_ARGON2ID);
                                     $stmt->bind_param('si', $newPass, $_SESSION['id']);
                                     $stmt->execute();
                                     $stmt->close();
-                                    $_SESSION['error'] = "Changes have been saved.";
+
+                                    if($stmt = $con->prepare("UPDATE `users` SET `Username` = ?, `E-mail` = ? WHERE `User_id` = ?")){
+                                        $stmt->bind_param('sss', $username, $email, $_SESSION['id']);
+                                        $stmt->execute();
+                                        $_SESSION['name'] = $username;
+                                        $stmt->close();
+                                        unset($_SESSION['error']);
+                                        $_SESSION['error'] = "Changes have been saved.";
+                                        header("location: settings.php");
+                                    }
                                 }
                             } else {
+                                unset($_SESSION['error']);
                                 $_SESSION['error'] = "Passwords don't match.";
                                 header("location: settings.php");
                             }
                         } else {
+                            unset($_SESSION['error']);
                             $_SESSION['error'] = "Please confirm the new password before changing it.";
                             header("location: settings.php");
                         }
-                    }
-
-                    if($stmt = $con->prepare("UPDATE `users` SET `Username` = ?, `E-mail` = ? WHERE `User_id` = ?")){
-                        $stmt->bind_param('sss', $username, $email, $_SESSION['id']);
-                        $stmt->execute();
-                        $_SESSION['name'] = $username;
-                        $stmt->close();
-                        $_SESSION['error'] = "Changes have been saved.";
-                        header("location: settings.php");
+                    } else {
+                        if($stmt = $con->prepare("UPDATE `users` SET `Username` = ?, `E-mail` = ? WHERE `User_id` = ?")){
+                            $stmt->bind_param('sss', $username, $email, $_SESSION['id']);
+                            $stmt->execute();
+                            $_SESSION['name'] = $username;
+                            $stmt->close();
+                            unset($_SESSION['error']);
+                            $_SESSION['error'] = "Changes have been saved.";
+                            header("location: settings.php");
+                        }
                     }
                 } else {
+                    unset($_SESSION['error']);
                     $_SESSION['error'] = "The password is incorrect";
                     header("location: settings.php");
                 }
