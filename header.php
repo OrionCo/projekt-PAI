@@ -15,13 +15,14 @@
         if($_SESSION["isadmin"] == 1){
             header('location: admin-panel.php');
         }
-        if($stmt = $con->prepare("SELECT `Set_name` FROM `sets` ORDER BY `Creation_date` DESC LIMIT 1")){
+        if($stmt = $con->prepare("SELECT `Set_name`, `Set_id`FROM `sets` ORDER BY `Creation_date` DESC LIMIT 1")){
             $stmt->execute();
             $stmt->store_result();
 
             if($stmt->num_rows > 0){
-                $stmt->bind_result($lastSet);
+                $stmt->bind_result($lastSet, $setId);
                 $stmt->fetch();
+                $stmt->close();
             }
         }
     } else if (strpos($file, "admin") !== FALSE){
