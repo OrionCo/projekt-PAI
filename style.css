@@ -459,7 +459,7 @@ html, body{
     border-top-right-radius: 10px;
 }
 
-.listItem:last-child, .itemInfo:last-of-type{
+.listItem:last-of-type, .itemInfo:last-of-type{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -540,4 +540,40 @@ html, body{
 .editForm input:not(:last-child){
     margin-bottom: 1rem;
     font-family: inherit;
+}
+
+.editProfile{
+    width: calc(100% - 12rem);
+    padding: 2rem 6rem;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.profileInfo{
+    display: block;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.editLabels{
+    width: 30%;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.infoInput{
+    font-size: 12pt;
+    padding: 0 10px;
+    background-color: rgb(233, 240, 255);
+}
+
+.profileLine{
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1rem;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0,0,0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }

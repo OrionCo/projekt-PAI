@@ -33,7 +33,6 @@
     if($_SESSION["isadmin"] == 1){
         $link1 = "admin-panel.php";
         $link2 = "admin-manage.php";
-        $link3 = "admin-settings.php";
         $panelName = "Admin Panel";
         $menuVar = "Manage Accounts";
     } else {
@@ -41,8 +40,8 @@
         $menuVar = "Sets";
         $link1 = "user-panel.php";
         $link2 = "user-sets.php";
-        $link3 = "user-settings.php";
     }
+    $link3 = "settings.php";
 ?>
 
 <!DOCTYPE html>

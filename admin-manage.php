@@ -36,8 +36,9 @@ if(isset($_POST['username']) && (isset($_POST['email'])) && (isset($_POST['userI
         echo $_SESSION['error'];
     }
     echo "</div>";
-
-    if($stmt = $con->prepare("SELECT u.`User_id`, `Username`, `E-mail`, `Is_active`, `Is_admin` FROM `users` u LEFT JOIN `user_level` ul ON (u.`User_id` = ul.`User_id`)")){
+    
+    if($stmt = $con->prepare("SELECT u.`User_id`, `Username`, `E-mail`, `Is_active`, `Is_admin` FROM `users` u LEFT JOIN `user_level` ul ON (u.`User_id` = ul.`User_id`) WHERE u.`User_id` <> (SELECT `User_id` FROM `users` WHERE `Username` = ?)")){
+        $stmt->bind_param('s', $_SESSION['name']);
         $stmt->execute();
         $stmt->store_result();
     
